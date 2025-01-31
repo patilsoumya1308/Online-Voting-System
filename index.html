@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="roleSelection">
+            <h2>Online Voting Web Application</h2>
+            <p>Select Your Role</p>
+            <button onclick="selectRole('admin')">Admin</button>
+            <button onclick="selectRole('voter')">Voter</button>
+        </div>
+
+        <div id="adminPanel" style="display: none;">
+            <h2>Admin Panel</h2>
+            <button onclick="showSection('addCandidate')">Add Candidate</button>
+            <button onclick="showSection('deleteCandidate')">Delete Candidate</button>
+            <button onclick="showSection('viewCandidates')">View Candidates</button>
+            <button onclick="goBackToRoleSelection()">Go Back</button>
+
+            <div id="addCandidate" style="display: none;">
+                <h3>Add Candidate</h3>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Enter candidate's name">
+
+                    <label for="mobile">Mobile:</label>
+                    <input type="text" id="mobile" placeholder="Enter mobile number">
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter email">
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob">
+
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" placeholder="Enter age">
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" placeholder="Enter address">
+
+                    <label for="city">City:</label>
+                    <input type="text" id="city" placeholder="Enter city">
+                </div>
+                <button onclick="addCandidate()">Add</button>
+            </div>
+
+            <div id="deleteCandidate" style="display: none;">
+                <h3>Delete Candidate</h3>
+                <div id="deleteList"></div>
+            </div>
+
+            <div id="viewCandidates" style="display: none;">
+                <h3>View Candidates</h3>
+                <div id="candidateList"></div>
+            </div>
+        </div>
+
+        <div id="voterPanel" style="display: none;">
+            <h2>Vote for Your Candidate</h2>
+            <div id="votingList"></div>
+            <button onclick="goBackToRoleSelection()">Go Back</button>
+        </div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>
